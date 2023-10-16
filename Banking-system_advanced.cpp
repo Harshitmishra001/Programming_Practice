@@ -1,74 +1,107 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 class userdata{
+    private:
     char name[50];
-    int accno,depo,withdraw,amount;
+    string accno;
+    long int depo,withdraw,amount;
     double bal;
-    string ans,typ,yesn;
+    string ans,yesn;
+    int minbal=1000;
     public:
     void getdata(void);
     void trans(void);
-    void savings(void);
+    void compoundin(void);
+    void withdraws(void);
+    void deposit(void);
 };
 void userdata::getdata(void){
     cout<<"Enter name of user:\n";
     cin>>name;
     cout<<"Enter account number:\n";
     cin>>accno;
-    cout<<"Enter Type of account s for saving and c for current\n";
-    cin>>typ;
     cout<<"Enter Balance\n";
     cin>>bal;
 }
 void userdata::trans(void){
-    cout<<"Enter w for withdrawl or d for deposit or a for account details: \n";
-    cin>>ans;
+    if(bal<minbal){
+        cout<<"As Balance is Less Then Minimum Required Balanace We are Imposing a Penalty of 200 RS\n";
+        bal-=200;
+        cout<<"Current Balance : "<<bal<<endl;
+    }
+        cout<<"Hi!\n"<<name<<endl;
+        cout<<"Balance:\n"<<bal<<endl;
+}
+void userdata::deposit(void){
+    if(bal<minbal){
+        cout<<"As Balance is Less Then Minimum Required Balanace We are Imposing a Penalty of 200 RS\n";
+        bal-=200;
+        cout<<"Current Balance : "<<bal<<endl;
+    }
     cout<<"Enter Transaction Amount: \n";
     cin>>amount;
-    if(ans=="w"){
-        if(bal<amount){
+    bal=bal+amount;
+    cout<<"Hi!\n"<<name<<endl;
+    cout<<"New Balance:\n"<<bal;
+}
+void userdata::compoundin(void){
+    double rate=1.75;
+    double time=5;
+    double compoundInterest;
+    cout<<"The Rate of Taken is:  "<<rate<<"\nAnd Time is: "<<time<<endl;
+    compoundInterest = bal * pow(1 + (rate / 100), time) - bal;
+    bal=bal+compoundInterest;
+    cout<<"New Balance: \n"<<bal<<endl;
+    }
+void userdata::withdraws(void){
+    cout<<"Enter Transaction Amount: \n";
+    cin>>amount;
+    if(bal<amount){
             cout<<"Insufficient Balance"<<endl;
         }
         else{
         bal=bal-amount;
         cout<<"Hi!\n"<<name<<endl;
-        cout<<"New Balance:\n"<<bal;
+        cout<<"New Balance:\n"<<bal<<endl;
         }
-    }
-    else if(ans=="d"){
-        bal=bal+amount;
-        cout<<"Hi!\n"<<name<<endl;
-        cout<<"New Balance:\n"<<bal;
-    }
-    else if(ans=="a"){
-        cout<<"Hi!\n"<<name<<endl;
-        cout<<"Balance:\n"<<bal<<endl;
-        cout<<"Type Of Account:\n"<<typ<<endl; 
-    }
-    else{
-        cout<<"Invalid Operation\n";
-    }
-}
-void userdata::savings(void){
-    double rate;
-    double time;
-    double compoundInterest;
-    
-    compoundInterest = bal * pow(1 + (rate / 100), time) - bal;
-    bal=bal+compoundInterest;
-    cout<<"New Balance: \n"<<bal;
-    cout<<"Would You Like To Withdraw? w for withdraw\n";
-    cin>>yesn;
-    if(yesn=="w"){
-        bal=bal-amount;
-        cout<<"Hi!\n"<<name<<endl;
-        cout<<"New Balance:\n"<<bal;
-    }
 }
 int main(){
+    string typ;
     userdata a;
+    string ask;
+    string cont = "yes";
     a.getdata();
-    if(typ)
-    a.trans();
+    do{
+        cout<<"Enter Type of account s for saving and c for current\n";
+        cin>>typ;
+        if(typ=="s"){
+            cout<<"enter d for Deposit And o for Account Details  : \n";
+            cin>>ask;
+            if(ask=="d"){
+                a.deposit();
+            }
+            else if(ask=="o"){
+                a.trans();
+            }
+            else{
+                cout<<"Invalid Output"<<endl;
+            }
+        }
+        else if(typ=="c"){
+            a.compoundin();
+            cout<<"enter yes To withdraw : \n";
+            cin>>ask;
+            if(ask=="yes"){
+                a.withdraws();
+            }
+        }
+        else{
+            cout<<"Wrong Input"<<endl;
+        }
+        cout<<"\nDo u Want to change Your account Type and Do calculations Again : \n";
+        cout<<"Enter yes To Continue\n";
+        cin>>cont;
+    }while (cont=="yes");
     return 0;
 }
