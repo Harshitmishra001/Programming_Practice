@@ -10,12 +10,20 @@ class userdata{
     string ans,yesn;
     int minbal=1000;
     public:
+    void minbalce(void);
     void getdata(void);
     void trans(void);
     void compoundin(void);
     void withdraws(void);
     void deposit(void);
 };
+void userdata::minbalce(void){
+    if(bal<minbal){
+        cout<<"As Balance is Less Then Minimum Required Balanace We are Imposing a Penalty of 200 RS\n";
+        bal-=200;
+        cout<<"Current Balance : "<<bal<<endl;
+    }
+}
 void userdata::getdata(void){
     cout<<"Enter name of user:\n";
     cin>>name;
@@ -25,20 +33,11 @@ void userdata::getdata(void){
     cin>>bal;
 }
 void userdata::trans(void){
-    if(bal<minbal){
-        cout<<"As Balance is Less Then Minimum Required Balanace We are Imposing a Penalty of 200 RS\n";
-        bal-=200;
-        cout<<"Current Balance : "<<bal<<endl;
-    }
+    
         cout<<"Hi!\n"<<name<<endl;
         cout<<"Balance:\n"<<bal<<endl;
 }
 void userdata::deposit(void){
-    if(bal<minbal){
-        cout<<"As Balance is Less Then Minimum Required Balanace We are Imposing a Penalty of 200 RS\n";
-        bal-=200;
-        cout<<"Current Balance : "<<bal<<endl;
-    }
     cout<<"Enter Transaction Amount: \n";
     cin>>amount;
     bal=bal+amount;
@@ -76,6 +75,7 @@ int main(){
         cout<<"Enter Type of account s for saving and c for current\n";
         cin>>typ;
         if(typ=="s"){
+            a.minbalce();
             cout<<"enter d for Deposit And o for Account Details  : \n";
             cin>>ask;
             if(ask=="d"){

@@ -10,7 +10,7 @@ int main(){
     int spoil=0;
     cout<<"Enter Number of Participants: \n";
     cin>>n;
-    int *arr =new int [n];
+    int *arr = new int [n];
     for(int i=0;i<n;i++){
         cin>>arr[i];
         if(arr[i]==1){
