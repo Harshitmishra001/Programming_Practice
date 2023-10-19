@@ -13,6 +13,9 @@ class runner{
     void converter(void);
     void getdata(void);
     void printer(void);
+    void add(runner a, runner b, runner c){
+        c.cm=a.cm+b.cm;
+    }
 };
 void runner::getdata(void){
     cout<<"Enter The Distance In Cm : \n";
@@ -35,8 +38,16 @@ void runner::printer(void){
 }
 int main(){
     runner a;
+    runner b;
+    runner c;
     a.getdata();
+    b.getdata();
+    c.add(a,b,c);
     a.converter();
+    b.converter();
+    c.converter();
     a.printer();
+    b.printer();
+    c.printer();
     return 0 ;
 }
