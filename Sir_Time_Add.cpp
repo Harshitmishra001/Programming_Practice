@@ -5,13 +5,13 @@ private:
 int hours;     int minutes;     int seconds; 
 public:     
 Time()
-{                        // default constructor        
+{                    
 hours = 0;   
 minutes = 0;    
 seconds = 0;
 }
 Time (int h, int m, int s)
-{       // parameterized constructor 
+{       
 hours = h;         
 minutes = m;      
 seconds = s;    

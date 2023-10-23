@@ -6,7 +6,7 @@ using namespace std;
     int Minutes; 
     int Seconds;
         public:
-        Times(){
+        Times(){//default constructor
             hours = 0;
             Minutes = 0;
             Seconds = 0;
@@ -37,14 +37,14 @@ using namespace std;
             hours = x.hours + y.hours+extra;   
             if(hours >= 24)  {   
             hours-=24;
-            cout << hours << ":" << Minutes << ":" << Seconds << endl;      
-            }
+            cout << "Result"<<hours << ":" << Minutes << ":" << Seconds << endl;      
                     }
+        }
 };
 int main() { 
     Times time1(20, 50, 30); 
     Times time2(10, 30, 43); 
-    time1.Display(); 
+    time1.Display();  
     time2.Display(); 
     cout<<"ADD: "; time1.AddTime(time1, time2); 
 return 0; 
