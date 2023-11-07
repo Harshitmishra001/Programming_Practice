@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-inline double cletofarn(double celcius){
+inline double cletofarn(double &celcius){
     return (celcius*9.0/5.0)+32.0;
 }
 int main (){
