@@ -8,7 +8,7 @@ int main(){
     for(i=0;i<n;i++){
         cin>>arr[i];
     }
-    cout<<"\nYour Unsorted array: "
+    cout<<"\nYour Unsorted array: ";
     for(i=0;i<n;i++){
         cout<<arr[i];
     }
@@ -21,7 +21,7 @@ int main(){
             }
         }
     }
-    cout<<"\nYour Sorted array: "
+    cout<<"\nYour Sorted array: ";
     for(i=0;i<n;i++){
         cout<<arr[i];
     }
