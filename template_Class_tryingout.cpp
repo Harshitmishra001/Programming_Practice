@@ -18,20 +18,19 @@ template <typename B> class Calculator{
         s = out.str();
         t = s.substr(s.find(".")+1);
         return tot+t.length();
-        return tot;
     }
     void significantnum(float num,int power){
         cout<<fixed<<setprecision(power)<<num;
     }
-    float CountdigitafterDecimal(float digits){
-        std::string s;
-        std::string t;
-        std::stringstream out;
-        out << digits;
-        s = out.str();
-        t = s.substr(s.find(".")+1);
-        return t.length();
-    }
+    // float CountdigitafterDecimal(float digits){
+    //     std::string s;
+    //     std::string t;
+    //     std::stringstream out;
+    //     out << digits;
+    //     s = out.str();
+    //     t = s.substr(s.find(".")+1);
+    //     return t.length();
+    // }
 };
 int main(){
     Calculator<float> Sol1;
