@@ -18,7 +18,7 @@ bool compareBooks(const Book &book1, const Book &book2) {
 }
 
 int main() {
-    std::string file_path = "path/to/your/books_file.txt";  // Replace with the actual file path
+    std::string file_path = "books_file.txt";  // Replace with the actual file path
     std::ifstream file(file_path);
 
     if (!file.is_open()) {

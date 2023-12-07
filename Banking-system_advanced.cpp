@@ -74,7 +74,7 @@ int main(){
     do{
         cout<<"Enter Type of account s for saving and c for current\n";
         cin>>typ;
-        if(typ=="s"){
+        if(typ=="c"){
             a.minbalce();
             cout<<"enter d for Deposit And o for Account Details  : \n";
             cin>>ask;
@@ -88,7 +88,7 @@ int main(){
                 cout<<"Invalid Output"<<endl;
             }
         }
-        else if(typ=="c"){
+        else if(typ=="s"){
             a.compoundin();
             cout<<"enter yes To withdraw : \n";
             cin>>ask;

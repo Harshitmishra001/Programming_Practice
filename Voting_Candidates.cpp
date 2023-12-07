@@ -10,6 +10,7 @@ int main(){
     int spoil=0;
     cout<<"Enter Number of Participants: \n";
     cin>>n;
+    cout<<"Enter 1,2,3,4,5 for each Candidate You want to Vote\n";
     int *arr = new int [n];
     for(int i=0;i<n;i++){
         cin>>arr[i];
