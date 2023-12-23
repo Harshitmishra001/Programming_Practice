@@ -3,7 +3,7 @@
 using namespace std;
 int main() {
     ofstream har("My_First_File.txt", ios::trunc);//app for owerwiriting in the file 
-    har << "HelloHarshit!" << endl;
+    har << "Hello!" << endl;
     har << "FirstTimeHere" << endl;
     har << 18 << " ThatsYourage" << endl;
     har.close();
