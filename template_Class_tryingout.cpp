@@ -11,9 +11,9 @@ template <typename B> class Calculator{
             tot++;
             n = n/10;
         }
-        std::string s;
-        std::string t;
-        std::stringstream out;
+        string s;
+        string t;
+        stringstream out;
         out << n;
         s = out.str();
         t = s.substr(s.find(".")+1);
