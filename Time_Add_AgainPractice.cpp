@@ -11,6 +11,7 @@ class timer{
         s=a.s+b.s;
         if (s>60){ s-=60;ext+=1;}
         m=a.m+b.m+ext;
+        ext=0;
         if (m>=60) {m-=60;ext+=1;}
         h=a.h+b.h+ext;
         cout<<"Added Time:"<<h<<":"<<m<<":"<<s<<endl;

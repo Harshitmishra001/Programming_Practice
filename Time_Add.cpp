@@ -49,3 +49,10 @@ int main() {
     cout<<"ADD: "; time1.AddTime(time1, time2); 
 return 0; 
 }
+value =8.9
+inc by 0.7
+result = 8.9+0.7
+        if 9+7 =16
+        16-12=4
+        exrt=1
+        =9.4
