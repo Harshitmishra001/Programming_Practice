@@ -11,3 +11,5 @@ num=int(input("Enter Number to Slice: "))
 hal_name,name=str_slice(name,num)
 name=reverse_name(hal_name)+name
 print("halfreverse string",name)
+if(name=="Harshit"):
+    print("You are the admin!!")
