@@ -13,13 +13,15 @@ int main(){
     cout<<"Reverse String:\n";
     string name = "Harshit";
     for(auto sim =name.rbegin(); sim !=name.rend();sim++){
-        cout<<*(sim)<<endl;
+        cout<<*(sim);
     }
+    cout<<endl;
     //Reversing a Vector
     cout<<"Reverse Vector:\n";
     for(auto sim =black.rbegin(); sim !=black.rend();sim++){
-        cout<<*(sim)<<endl;
+        cout<<*(sim);
     }
+    cout<<endl;
     //Printing Vector 
     vector<int>::iterator har=black.begin();    
     cout<<"Straight Vector:\n";
