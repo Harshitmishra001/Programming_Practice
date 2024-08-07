@@ -48,5 +48,6 @@
         "xutility": "cpp",
         "iomanip": "cpp",
         "fstream": "cpp"
-    }
+    },
+    "liveServer.settings.port": 5501
 }
