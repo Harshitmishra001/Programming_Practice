@@ -6,5 +6,5 @@ class Reader{
         String Var = scanner.nextLine();
         System.out.println(Var);
         scanner.close();
-    }
+        }
 }
