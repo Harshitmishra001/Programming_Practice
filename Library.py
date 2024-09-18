@@ -1,4 +1,3 @@
-
 import tkinter
 from tkinter import *
 from tkinter import ttk
@@ -78,9 +77,9 @@ class LibraryManagementSystem:
 
         # Populate the listbox with book titles
         book_list = ['The Catcher in the Rye', 'To Kill a Mockingbird', 'Pride and Prejudice', 'The Great Gatsby', 'Moby Dick',
-                        'War and Peace', 'The Odyssey', 'Ulysses', 'The Brothers Karamazov', 'Crime and Punishment',
-                        'Brave New World', 'Jane Eyre', 'Wuthering Heights', 'The Divine Comedy', 'Frankenstein',
-                        'Dracula', 'Don Quixote', 'The Hobbit', 'The Lord of the Rings']
+                     'War and Peace', 'The Odyssey', 'Ulysses', 'The Brothers Karamazov', 'Crime and Punishment',
+                     'Brave New World', 'Jane Eyre', 'Wuthering Heights', 'The Divine Comedy', 'Frankenstein',
+                     'Dracula', 'Don Quixote', 'The Hobbit', 'The Lord of the Rings']
 
         def SelectBook(event=""):
             value = str(listBox.get(listBox.curselection()))
@@ -149,7 +148,7 @@ class LibraryManagementSystem:
         btnViewData = Button(frameButton,command=self.viewData, text="View Record", font=("times new roman", 15, "bold"), width=20, bg="powder blue", fg="black")
         btnViewData.grid(row=0, column=2)
 
-        btnDeleteAll = Button(frameButton,command=self.delete_all, text="Delete All Record", font=("times new roman", 15, "bold"), width=20, bg="powder blue", fg="black")  # Connect to delete_all
+        btnDeleteAll = Button(frameButton,command=self.delete, text="Delete All Record", font=("times new roman", 15, "bold"), width=20, bg="powder blue", fg="black")
         btnDeleteAll.grid(row=0, column=4)
 
         btnUpdate = Button(frameButton,text="Update", font=("times new roman", 15, "bold"), width=20, bg="powder blue", fg="black")
@@ -207,39 +206,63 @@ class LibraryManagementSystem:
                 conn.close()
                 messagebox.showinfo("Success", "Your record was successfully recorded!!!!")
 
+    # def update(self):
+    #     conn = mysql.connector.connect(host="localhost", username="Nidhi", password="Nidhi@2355", database="mydata")
+    #     my_cursor = conn.cursor()
+    #     my_cursor.execute(
+    #     "UPDATE library SET BookName=%s, AuthName=%s, AvaOfBook=%s, IssuerID=%s WHERE BookID=%s",
+    #     (
+    #         self.BookName_var.get(),
+    #         self.AuthName_var.get(),
+    #         self.AvaOfBook_var.get(),
+    #         self.IssuerID_var.get(),
+    #         self.BookID_var.get(),
+    #     )
+    # )
+
+    #     conn.commit()
+    #     self.fetch_data()
+    #     self.reset()
+    #     conn.close()
+
+    # messagebox.showinfo("Success", "Record Successfully Updated")
+
+         
+
     def fetch_data(self):
-            conn = mysql.connector.connect(host="localhost", username="Nidhi", password="Nidhi@2355", database="mydata")
-            my_cursor = conn.cursor()
-            my_cursor.execute("select * from library")
-            rows=my_cursor.fetchall()
+         conn = mysql.connector.connect(host="localhost", username="Nidhi", password="Nidhi@2355", database="mydata")
+         my_cursor = conn.cursor()
+         my_cursor.execute("select * from library")
+         rows=my_cursor.fetchall()
 
-            if len(rows)!=0:
-                self.library_table.delete(*self.library_table.get_children())
-                for i in rows:
-                    self.library_table.insert("",END,values=i)
-                conn.commit()
-                conn.close()
-                
+         if len(rows)!=0:
+              self.library_table.delete(*self.library_table.get_children())
+              for i in rows:
+                   self.library_table.insert("",END,values=i)
+              conn.commit()
+              conn.close()
+
+
     def get_cursor(self,event=""):
-            cursor_row=self.library_table.focus()
-            content=self.library_table.item(cursor_row)
-            row=content['values']
+         cursor_row=self.library_table.focus()
+         content=self.library_table.item(cursor_row)
+         row=content['values']
 
-            self.BookID_var.set(row[0]),
-            self.BookName_var.set(row[1]),
-            self.AuthName_var.set(row[2]),
-            self.AvaOfBook_var.set(row[3]),
-            self.IssuerID_var.set(row[4])
+         self.BookID_var.set(row[0]),
+         self.BookName_var.set(row[1]),
+         self.AuthName_var.set(row[2]),
+         self.AvaOfBook_var.set(row[3]),
+         self.IssuerID_var.set(row[4])
 
     def viewData(self):
-            self.textBox.insert(END,"Book ID\t\t"+self.BookID_var.get()+"\n")
-            self.textBox.insert(END,"Book Name\t\t"+self.BookName_var.get()+"\n")
+         self.textBox.insert(END,"Book ID\t\t"+self.BookID_var.get()+"\n")
+         self.textBox.insert(END,"Book Name\t\t"+self.BookName_var.get()+"\n")
 
-            self.textBox.insert(END,"Auther Name\t\t"+self.AuthName_var.get()+"\n")
+         self.textBox.insert(END,"Auther Name\t\t"+self.AuthName_var.get()+"\n")
 
-            self.textBox.insert(END,"Status of Book\t\t"+self.AvaOfBook_var.get()+"\n")
+         self.textBox.insert(END,"Status of Book\t\t"+self.AvaOfBook_var.get()+"\n")
 
-            self.textBox.insert(END,"Issuer ID\t\t"+self.IssuerID_var.get()+"\n")
+         self.textBox.insert(END,"Issuer ID\t\t"+self.IssuerID_var.get()+"\n")
 
 
     def reset(self):
@@ -252,20 +275,20 @@ class LibraryManagementSystem:
 
 
     def iExit(self):
-            iExit=tkinter.messagebox.askyesno("Library Management System","Do you want to exit")
-            if iExit>0:
-                self.root.destroy()
-                return
-            
-            #     messagebox.showerror("Error", f"Due To: {str(es)}")
+         iExit=tkinter.messagebox.askyesno("Library Management System","Do you want to exit")
+         if iExit>0:
+              self.root.destroy()
+              return
+         
 
-def delete(self):
-        if self.BookID_var.get() == "":
-            messagebox.showerror("Error", "First select a book record to delete")
+
+    def delete(self):
+        if self.BookID_var.get() == "":  # Add colon here and fix condition
+          messagebox.showerror("Error", "First select a book record to delete")
         else:
             conn = mysql.connector.connect(host="localhost", username="Nidhi", password="Nidhi@2355", database="mydata")
             my_cursor = conn.cursor()
-            query = "delete from library where BookID=%s" 
+            query = "delete from library where BookID=%s"  # Corrected query syntax
             value = (self.BookID_var.get(),)
             my_cursor.execute(query, value)
 
@@ -273,19 +296,28 @@ def delete(self):
             self.fetch_data()
             self.reset()
             conn.close()
-            messagebox.showinfo("Success", "Record Successfully Deleted")
+        messagebox.showinfo("Success", "Record Successfully Deleted")
 
-def delete_all(self):
-        """Deletes all records from the library table."""
-        if messagebox.askyesno("Confirmation", "Are you sure you want to delete ALL records?"):
-            conn = mysql.connector.connect(host="localhost", username="Nidhi", password="Nidhi@2355", database="mydata")
-            my_cursor = conn.cursor()
-            my_cursor.execute("DELETE FROM library")
-            conn.commit()
-            self.fetch_data()
-            conn.close()
-            messagebox.showinfo("Success", "All records deleted successfully.")
+              
+              
+
+           
+
+              
+
+  
+
+         
+                   
+
+         
+
+            # except Exception as es:
+            #     messagebox.showerror("Error", f"Due To: {str(es)}")
+
 if __name__ == "__main__":
     root = Tk()
     obj = LibraryManagementSystem(root)
     root.mainloop()
+
+
