@@ -8,6 +8,29 @@ typedef struct node
     int number;
     struct node *next;
 } node;
+struct node* reverse(struct node **list){
+    node *current = *list;
+    node *next = NULL;
+    node *prev= NULL;
+    while (current != NULL) {
+        next = current->next;  
+        current->next = prev;   
+        prev = current;         
+        current = next;   
+    }
+    *list = prev;
+    return *list;
+}
+
+int length(struct node **list){
+    int len = 0;
+    node *ptr = *list;
+    while(ptr->next != NULL){
+        len++;
+        ptr=ptr->next;
+    }
+    return len;
+}
 void insertSpecific(struct node **list,int key, int number)
 {
     struct node *ptr=*list;
@@ -125,6 +148,8 @@ int main(int argc, char *argv[])
         printf("To exit press 3\n");
         printf("To delete press 4\n");
         printf("To insertSpecific press 5\n");
+        printf("6 to revrse list");
+        printf("7 to revrse list");
 
 
         int choice;
@@ -160,6 +185,14 @@ int main(int argc, char *argv[])
             printf("Enter the number to insert:  ");
             scanf("%i",&value);
             insertSpecific(&list,key,value);
+        }
+        else if (choice==6){
+            int lengthlist = length(&list)+1;
+            printf("Length is %i \n",lengthlist);
+        }
+        else if (choice  == 7 ){
+            list = reverse(&list);
+            printf("List is Reversed Try Printing it........\n");
         }
         else
         {
