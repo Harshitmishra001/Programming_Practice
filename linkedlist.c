@@ -8,7 +8,37 @@ typedef struct node
     int number;
     struct node *next;
 } node;
-
+void insertSpecific(struct node **list,int key, int number)
+{
+    struct node *ptr=*list;
+    bool flag = true;
+    int counter = 0;
+    while(flag==true)
+    {
+        if (key == 0)
+        {
+        struct node *n = (struct node *)malloc(sizeof(struct node));
+        n->number = number;
+        n->next = *list;
+        *list = n;
+        return;
+        }
+        if (counter==key-1)
+        {
+            node *n = (node *)malloc(sizeof(node));
+            n->number=number;
+            n->next=ptr->next;
+            ptr->next= n;
+            flag=false; 
+        }
+        ptr=ptr->next;
+        if (ptr==NULL)
+        {
+            flag=false;
+        }
+        counter++;
+    }
+}
 void deletion(struct node **list, int key)
 {
     struct node *temp = *list;
@@ -94,6 +124,8 @@ int main(int argc, char *argv[])
         printf("For printing list press 2\n");
         printf("To exit press 3\n");
         printf("To delete press 4\n");
+        printf("To insertSpecific press 5\n");
+
 
         int choice;
         scanf("%i", &choice);
@@ -119,6 +151,15 @@ int main(int argc, char *argv[])
             printf("Enter Number to delete: ");
             scanf("%i", &key);
             deletion(&list, key);
+        }
+        else if (choice==5){
+            int key;
+            int value;
+            printf("Enter the position to insert in:  ");
+            scanf("%i",&key);
+            printf("Enter the number to insert:  ");
+            scanf("%i",&value);
+            insertSpecific(&list,key,value);
         }
         else
         {
