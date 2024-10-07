@@ -96,7 +96,6 @@ void deletion(struct node **list, int key)
         printf("Number %d deleted.\n", key);
     }
 }
-
 void insert(node **list, int number)
 {
     node *n = (node *)malloc(sizeof(node));
