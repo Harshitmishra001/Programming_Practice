@@ -1,3 +1,4 @@
+package java_work;
 import java.util.Scanner;
 import java.io.*;
 class customer{
