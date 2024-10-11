@@ -62,10 +62,44 @@ void display(struct Stack *s){
     }
 }
 int main(int argc,char *argv[]){
-    struct Stack *s = initStack();
-    push(s,10);
-    push(s,20);
-    push(s,30);
-    pop(s);
-    display(s);
+   struct Stack *s = initStack();
+    int choice, value;
+
+    while (1) {
+        // Display menu options
+        printf("\nChoose an operation:\n");
+        printf("1: Push\n");
+        printf("2: Pop\n");
+        printf("3: Display\n");
+        printf("4: Quit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter value to push: ");
+                scanf("%d", &value);
+                push(s, value);
+                printf("%d pushed to stack.\n", value);
+                break;
+
+            case 2:
+                pop(s);
+                break;
+
+            case 3:
+                printf("Stack contents: \n");
+                display(s);
+                break;
+
+            case 4:
+                printf("Exiting the program.\n");
+                exit(0);
+
+            default:
+                printf("Invalid choice! Please choose again.\n");
+        }
+    }
+
+    return 0;
 }

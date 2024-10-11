@@ -1,5 +1,5 @@
 package java_work;
-class Bird{
+public class Bird{
     protected void fly(){
         System.out.println("I can Fly");
     }
