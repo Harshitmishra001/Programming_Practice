@@ -94,7 +94,7 @@ int main(int argc,char *argv[]){
 
             case 4:
                 printf("Exiting the program.\n");
-                exit(0);
+                exit(0); 
 
             default:
                 printf("Invalid choice! Please choose again.\n");
