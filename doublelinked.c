@@ -26,12 +26,6 @@ void insert(struct node** list, int val) {
         n->prev = ptr;
     }
 }
-void deletion(struct node **list,int val){
-    node *ptr = *list;
-    while(ptr->next != NULL &&ptr->val!=val){
-        ptr = ptr->next;
-    }
-}
 void specificdeletion(struct node **list,int key){
     struct node *ptr = *list;
     if (*list == NULL){
