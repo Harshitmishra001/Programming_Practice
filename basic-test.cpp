@@ -32,6 +32,7 @@ int main() {
     }
     else{
         cout<<"Element Not Found\n";
+ 
     }
     return 0;
 }

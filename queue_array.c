@@ -21,7 +21,6 @@ void insert(struct queue **q, int d) {
         }
         printf("Inserted %d\n", d);
     }
-    free(que);
 }
 
 void delete(struct queue **q) {
@@ -35,7 +34,6 @@ void delete(struct queue **q) {
             que->front = que->rear = -1;
         }
     }
-    free(que);
 }
 
 void show(struct queue **q) {
@@ -49,7 +47,6 @@ void show(struct queue **q) {
         }
         printf("\n");
     }
-    free(que);
 }
 
 int main() {
