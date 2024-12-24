@@ -1,3 +1,4 @@
+//harshit mishra 23BAI10473
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -132,3 +133,45 @@ int main(int argc, char* argv[]) {
     print(list);
     return 0;
 }
+/*
+@Harshitmishra001 ➜ /workspaces/Programming_Practice (main) $ ./doublelinked
+For Insert in list press 1
+For printing list press 2
+To exit press 3
+Enter 4 to insert at specific
+Press 5 to delete at specific
+Press 6 to Print in reverse
+1
+Enter number to enter:23
+For Insert in list press 1
+For printing list press 2
+To exit press 3
+Enter 4 to insert at specific
+Press 5 to delete at specific
+Press 6 to Print in reverse
+1
+Enter number to enter:24
+For Insert in list press 1
+For printing list press 2
+To exit press 3
+Enter 4 to insert at specific
+Press 5 to delete at specific
+Press 6 to Print in reverse
+1
+Enter number to enter:25
+For Insert in list press 1
+For printing list press 2
+To exit press 3
+Enter 4 to insert at specific
+Press 5 to delete at specific
+Press 6 to Print in reverse
+2
+0->23->24->25->NULL
+For Insert in list press 1
+For printing list press 2
+To exit press 3
+Enter 4 to insert at specific
+Press 5 to delete at specific
+Press 6 to Print in reverse
+6
+<-24<-23<-0*/

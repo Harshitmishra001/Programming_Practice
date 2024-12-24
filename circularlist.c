@@ -1,3 +1,4 @@
+//Harshit Mishra 23bai10473
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -108,3 +109,50 @@ int main() {
 
     return 0;
 }
+/*@Harshitmishra001 ➜ /workspaces/Programming_Practice (main) $ ./circularlist
+
+Menu:
+1. Insert at start
+2. Insert at end
+3. Display list
+4. Delete the start node
+5. Exit
+Enter your choice: 1
+Enter a number to insert at start: 12
+
+Menu:
+1. Insert at start
+2. Insert at end
+3. Display list
+4. Delete the start node
+5. Exit
+Enter your choice: 1
+Enter a number to insert at start: 23
+
+Menu:
+1. Insert at start
+2. Insert at end
+3. Display list
+4. Delete the start node
+5. Exit
+Enter your choice: 2
+Enter a number to insert at end: 34
+
+Menu:
+1. Insert at start
+2. Insert at end
+3. Display list
+4. Delete the start node
+5. Exit
+Enter your choice: 1
+Enter a number to insert at start: 45
+
+Menu:
+1. Insert at start
+2. Insert at end
+3. Display list
+4. Delete the start node
+5. Exit
+Enter your choice: 3
+Current Circular Linked List:
+45->23->12->34->...*/
