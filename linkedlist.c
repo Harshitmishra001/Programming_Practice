@@ -1,3 +1,4 @@
+//Harshit Mishra 23BAI10473
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -209,3 +210,36 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+/*@Harshitmishra001 ➜ /workspaces/Programming_Practice (main) $ ./linkedlist
+For Insert in list press 1
+For printing list press 2
+To exit press 3
+To delete press 4
+To insertSpecific press 5
+6 to revrse list
+7 to revrse list:1
+Enter Number: 12
+For Insert in list press 1
+For printing list press 2
+To exit press 3
+To delete press 4
+To insertSpecific press 5
+6 to revrse list
+7 to revrse list:1
+Enter Number: 23
+For Insert in list press 1
+For printing list press 2
+To exit press 3
+To delete press 4
+To insertSpecific press 5
+6 to revrse list
+7 to revrse list:1
+Enter Number: 34
+For Insert in list press 1
+For printing list press 2
+To exit press 3
+To delete press 4
+To insertSpecific press 5
+6 to revrse list
+7 to revrse list:2
+12->23->34->NULL*/
